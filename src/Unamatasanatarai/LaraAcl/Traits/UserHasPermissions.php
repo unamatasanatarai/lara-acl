@@ -14,4 +14,17 @@ trait UserHasPermissions
             'acl_users_permissions'
         )->withTimestamps();
     }
+
+    /**
+     * @param $permissions string|array of strings
+     */
+    public function hasPermission($permissions)
+    {
+        if ( ! is_array($permissions)) {
+            $permissions = [ $permissions ];
+        }
+
+        return $this->permissions()->whereIn('slug', $permissions)->count();
+
+    }
 }

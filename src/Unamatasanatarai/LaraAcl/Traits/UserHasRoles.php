@@ -14,4 +14,16 @@ trait UserHasRoles
             'acl_users_roles'
         )->withTimestamps();
     }
+    /**
+     * @param $roles string|array of strings
+     */
+    public function hasRole($roles)
+    {
+        if ( ! is_array($roles)) {
+            $roles = [ $roles ];
+        }
+
+        return $this->roles()->whereIn('slug', $roles)->count();
+
+    }
 }

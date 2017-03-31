@@ -8,8 +8,6 @@ use Unamatasanatarai\LaraAcl\Traits\BelongsToUsers;
 class Permission extends Model
 {
 
-    use BelongsToUsers;
-
     protected $table = 'acl_permissions';
     protected $fillable = [ 'slug', 'description' ];
 
