@@ -1,0 +1,22 @@
+{
+    "name": "unamatasanatarai/lara-acl",
+    "type": "library",
+    "description": "Very simple ACL for Laravel",
+    "homepage": "https://github.com/unamatasanatarai/lara-acl",
+    "keywords": ["laravel5","acl","groups","authentication"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Unamata Sanatarai",
+            "email": "unamatasanatarai@gmail.com",
+            "homepage": "https://github.com/unamatasanatarai/",
+            "role": "Main Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Unamatasanatarai\\LaraAcl\\": "src/Unamatasanatarai/LaraAcl"
+        }
+    },
+    "minimum-stability": "dev"
+}
