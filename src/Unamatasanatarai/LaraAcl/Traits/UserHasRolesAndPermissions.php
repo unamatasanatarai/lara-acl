@@ -29,7 +29,7 @@ trait UserHasRolesAndPermissions
 
         asort($permissions);
 
-        return Cache::remember(
+        return (bool) Cache::remember(
             'user-has-permissions_' . $this->id . '_' . md5(implode('_', $permissions)),
             1,
             function () use ($permissions) {
@@ -41,7 +41,7 @@ trait UserHasRolesAndPermissions
                     }
                 }
 
-                return (bool) $this->permissions()->whereIn('slug', $permissions)->count();
+                return $this->permissions()->whereIn('slug', $permissions)->count();
             }
         );
     }
@@ -65,7 +65,7 @@ trait UserHasRolesAndPermissions
         $roles = array_filter(array_map('trim', $roles));
         asort($roles);
 
-        return Cache::remember(
+        return (bool) Cache::remember(
             'user-has-roles_' . $this->id . '_' . md5(implode('_', $roles)),
             1,
             function () use ($roles) {
