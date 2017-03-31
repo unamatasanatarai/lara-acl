@@ -25,10 +25,7 @@ class AclServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //$this->app->bind('spy', 'Unamatasanatarai\LaraSpy\SpySupervisor');
-        //
-        //$this->app->bind('Unamatasanatarai\LaraSpy\Handler\HandlerInterface',
-        //    'Unamatasanatarai\LaraSpy\Handler\EloquentHandler');
+
     }
 
     /**
