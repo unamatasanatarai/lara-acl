@@ -43,19 +43,33 @@ class AclServiceProvider extends ServiceProvider
 
     private function registerBladeExtensions()
     {
-        Blade::directive('permitted', function ($expression) {
-            $expression = var_export(array_filter(explode(',', $expression)), 1);
-            return "<?php if (Auth::check() && Auth::user()->hasPermission({$expression})): ?>";
-        });
-        Blade::directive('endpermitted', function () {
-            return "<?php endif; ?>";
-        });
-        Blade::directive('acting', function ($expression) {
-            $expression = var_export(array_filter(explode(',', $expression)), 1);
-            return "<?php if (Auth::check() && Auth::user()->hasRole({$expression})): ?>";
-        });
-        Blade::directive('endacting', function () {
-            return "<?php endif; ?>";
-        });
+        Blade::directive(
+            'permitted',
+            function ($expression) {
+                $expression = var_export(explode(',', $expression), 1);
+
+                return "<?php if (Auth::check() && Auth::user()->hasPermission({$expression})): ?>";
+            }
+        );
+        Blade::directive(
+            'endpermitted',
+            function () {
+                return "<?php endif; ?>";
+            }
+        );
+        Blade::directive(
+            'acting',
+            function ($expression) {
+                $expression = var_export(explode(',', $expression), 1);
+
+                return "<?php if (Auth::check() && Auth::user()->hasRole({$expression})): ?>";
+            }
+        );
+        Blade::directive(
+            'endacting',
+            function () {
+                return "<?php endif; ?>";
+            }
+        );
     }
 }
