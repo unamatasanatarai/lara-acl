@@ -18,6 +18,7 @@ class CreateAclRolesTable extends Migration
             $table->increments('id')->unsigned();
             $table->string('slug', 64)->unique();
             $table->string('description', 128)->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
