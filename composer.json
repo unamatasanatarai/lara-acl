@@ -18,7 +18,7 @@
             "Unamatasanatarai\\LaraAcl\\": "src/Unamatasanatarai/LaraAcl"
         },
         "files": [
-            "Unamatasanatarai/LaraAcl/helpers.php"
+            "src/Unamatasanatarai/LaraAcl/helpers.php"
         ]
     },
     "minimum-stability": "dev"
