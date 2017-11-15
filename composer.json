@@ -16,7 +16,10 @@
     "autoload": {
         "psr-4": {
             "Unamatasanatarai\\LaraAcl\\": "src/Unamatasanatarai/LaraAcl"
-        }
+        },
+        "files": [
+            "Unamatasanatarai/LaraAcl/helpers.php"
+        ]
     },
     "minimum-stability": "dev"
 }
